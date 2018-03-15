@@ -18,6 +18,7 @@ h2{
   font-weight: lighter;
   text-align: center;
   outline: none;
+  margin-bottom: 5%;
 }
 .login{
   background: #4BE9D2;
@@ -53,5 +54,13 @@ h2{
   position: absolute;
   margin-left: 42%;
   margin-top: 8%;
+}
 
+h3{
+  font-family: 'Verdana';
+  color: white;
+  font-family: sans-serif;
+  font-weight: lighter;
+  text-align: left;
+  margin-left: 4%;
 }
