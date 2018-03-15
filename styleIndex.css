@@ -1,0 +1,88 @@
+*{
+  background-color: #072145;
+}
+h1{
+  color: #4BE9D2;
+  font-family: sans-serif;
+  font-weight: lighter;
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  outline: none;
+  text-shadow: 4px 4px 4px black
+}
+h2{
+  font-family: 'Verdana';
+  color: white;
+  font-family: sans-serif;
+  font-weight: lighter;
+  text-align: center;
+  outline: none;
+}
+.login{
+  background: #4BE9D2;
+  opacity: 1.00;
+  font-family: "Verdana";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 100%;
+  color: white;
+  opacity: 1.00;
+  outline: none;
+  border: 4px solid #4BE9D2;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 30%;
+  margin-top: 3%;
+  text-shadow: 2px 2px 2px #363131;
+  position: absolute;
+}
+.login2{
+  background: #4BE9D2;
+  opacity: 1.00;
+  font-family: "Verdana";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 100%;
+  color: white;
+  opacity: 1.00;
+  outline: none;
+  border: 4px solid #4BE9D2;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 50%;
+  margin-top: 3%;
+  text-shadow: 2px 2px 2px #363131;
+  position: absolute;
+}
+.login:hover{
+  background: #4BE9D2;
+  transform: scale(1.2);
+  outline: none;
+  border: 4px solid #4BE9D2;
+}
+.login2:hover{
+  background: #4BE9D2;
+  transform: scale(1.2);
+  outline: none;
+  border: 4px solid #4BE9D2;
+}
+
+.doctor{
+  height: 240px;
+  width: 200px;
+  position: absolute;
+  margin-left: 42%;
+  margin-top: 8%;
+}
+
+h3{
+  font-family: 'Verdana';
+  color: white;
+  font-family: sans-serif;
+  font-weight: lighter;
+  text-align: left;
+  margin-left: 4%;
+}

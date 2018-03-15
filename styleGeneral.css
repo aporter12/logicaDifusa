@@ -1,0 +1,29 @@
+*{
+  background-color: #072145;
+}
+h1{
+  color: #4BE9D2;
+  font-family: sans-serif;
+  font-weight: lighter;
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  outline: none;
+  text-shadow: 4px 4px 4px black
+}
+h2{
+  color: white;
+  font-family: sans-serif;
+  font-weight: lighter;
+  padding-left: 5%; 
+  outline: none;
+  margin-bottom: 4%;
+}
+table{
+  border-spacing: 5em;
+  width: 100%;
+  color: white;
+  font-family: sans-serif;
+  font-weight: lighter;
+  text-align: left;
+}
