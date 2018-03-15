@@ -1,8 +1,12 @@
+:root {
+    --color-blue: #4BCAD2;    
+}
+
 *{
   background-color: #072145;
 }
 h1{
-  color: #4BE9D2;
+  color: var(--color-blue);
   font-family: sans-serif;
   font-weight: lighter;
   text-align: center;
@@ -20,7 +24,7 @@ h2{
   outline: none;
 }
 .login{
-  background: #4BE9D2;
+  background: var(--color-blue);
   opacity: 1.00;
   font-family: "Verdana";
   font-style: normal;
@@ -30,7 +34,7 @@ h2{
   color: white;
   opacity: 1.00;
   outline: none;
-  border: 4px solid #4BE9D2;
+  border: 4px solid var(--color-blue);
   border-radius: 8px;
   cursor: pointer;
   margin-left: 30%;
@@ -39,7 +43,7 @@ h2{
   position: absolute;
 }
 .login2{
-  background: #4BE9D2;
+  background: var(--color-blue);
   opacity: 1.00;
   font-family: "Verdana";
   font-style: normal;
@@ -49,7 +53,7 @@ h2{
   color: white;
   opacity: 1.00;
   outline: none;
-  border: 4px solid #4BE9D2;
+  border: 4px solid var(--color-blue);
   border-radius: 8px;
   cursor: pointer;
   margin-left: 50%;
@@ -58,16 +62,16 @@ h2{
   position: absolute;
 }
 .login:hover{
-  background: #4BE9D2;
+  background: var(--color-blue);
   transform: scale(1.2);
   outline: none;
-  border: 4px solid #4BE9D2;
+  border: 4px solid var(--color-blue);
 }
 .login2:hover{
-  background: #4BE9D2;
+  background: var(--color-blue);
   transform: scale(1.2);
   outline: none;
-  border: 4px solid #4BE9D2;
+  border: 4px solid var(--color-blue);
 }
 
 .doctor{

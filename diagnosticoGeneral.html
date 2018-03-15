@@ -1,61 +1,441 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="styleGeneral.css">
-    <title>Diagnóstico General</title>
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <title>Diagnóstico General</title>
+  <link rel="stylesheet" href="css/styleGeneral.css">
+  <link rel="stylesheet" href="css/bars-1to10.css">
+
+  <script src="js/jquery-1.11.2.min.js"></script>
+  <script src="js/jquery.barrating.min.js"></script>
+  <script src="js/examples.js"></script>
+</head>
+<body>
   <h1>¿Presentas alguno de estos síntomas?</h1>
 
   <h2>En una escala del 1 al 10 selecciona que tan intenso es:</h2>
 
+  <table>
+    <tr>
+      <th>Pérdida de cabello</th>
+      <td>
+        <div id="rating">
+          <select id="perdCabello" name="rating" autocomplete="off">
+            <option value="0" selected="selected">0</option>
+            <option value=".1">1</option>
+            <option value=".2">2</option>
+            <option value=".3">3</option>
+            <option value=".4">4</option>
+            <option value=".5">5</option>
+            <option value=".6">6</option>
+            <option value=".7">7</option>
+            <option value=".8">8</option>
+            <option value=".9">9</option>
+            <option value=".10">10</option>
+          </select>
+        </div>
+      </td>
 
-<table>
-  <tr>
-    <th>Pérdida de cabello</th>
-    <th>Caspa</th>
-  </tr>
-  <tr>
-    <th>Picazón</th>
-    <th>Enrojecimiento</th>
-  </tr>
-  <tr>
-    <th>Ronchas</th>
-    <th>Póstulas</th>
-  </tr>
-  <tr>
-    <th>Perdida de apetito</th>
-    <th>Dolor de cabeza</th>
-  </tr>
-  <tr>
-    <th>Hinchazón</th>
-    <th>Piel seca</th>
-  </tr>
-  <tr>
-    <th>Manchas Rojas</th>
-    <th>Fatiga</th>
-  </tr>
-  <tr>
-    <th>Fiebre</th>
-    <th>Espinillas</th>
-  </tr>
-  <tr>
-    <th>Costras</th>
-    <th>Dolor articular</th>
-  </tr>
-  <tr>
-    <th>Dolor de garganta</th>
-    <th>Piel con hoyuelos</th>
-  </tr>
-  <tr>
-    <th>Dolor de huesos</th>
-    <th>Calambres</th>
-  </tr>
-  <tr>
-    <th>Congestión nasal</th>
-    <th>Erupciones</th>
-  </tr>
-</table>
-  </body>
+      <th>Caspa</th>
+      <td>
+        <div id="rating">
+          <select id="caspa" name="rating" autocomplete="off">
+            <option value="0" selected="selected">0</option>
+            <option value=".1">1</option>
+            <option value=".2">2</option>
+            <option value=".3">3</option>
+            <option value=".4">4</option>
+            <option value=".5">5</option>
+            <option value=".6">6</option>
+            <option value=".7">7</option>
+            <option value=".8">8</option>
+            <option value=".9">9</option>
+            <option value=".10">10</option>
+          </select>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <th>Picazón</th>
+      <td>
+        <div id="rating">
+          <select id="picazon" name="rating" autocomplete="off">
+            <option value="0" selected="selected">0</option>
+            <option value=".1">1</option>
+            <option value=".2">2</option>
+            <option value=".3">3</option>
+            <option value=".4">4</option>
+            <option value=".5">5</option>
+            <option value=".6">6</option>
+            <option value=".7">7</option>
+            <option value=".8">8</option>
+            <option value=".9">9</option>
+            <option value=".10">10</option>
+          </select>
+        </div>
+      </td>
+      <th>Enrojecimiento</th>
+      <td>
+        <div id="rating">
+          <select id="enrojecimiento" name="rating" autocomplete="off">
+            <option value="0" selected="selected">0</option>
+            <option value=".1">1</option>
+            <option value=".2">2</option>
+            <option value=".3">3</option>
+            <option value=".4">4</option>
+            <option value=".5">5</option>
+            <option value=".6">6</option>
+            <option value=".7">7</option>
+            <option value=".8">8</option>
+            <option value=".9">9</option>
+            <option value=".10">10</option>
+          </select>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th>Ronchas</th>
+      <td>
+        <div id="rating">
+          <select id="ronchas" name="rating" autocomplete="off">
+            <option value="0" selected="selected">0</option>
+            <option value=".1">1</option>
+            <option value=".2">2</option>
+            <option value=".3">3</option>
+            <option value=".4">4</option>
+            <option value=".5">5</option>
+            <option value=".6">6</option>
+            <option value=".7">7</option>
+            <option value=".8">8</option>
+            <option value=".9">9</option>
+            <option value=".10">10</option>
+          </select>
+        </div>
+      </td>
+      <th>Póstulas</th>
+      <td>
+        <div id="rating">
+          <select id="postulas" name="rating" autocomplete="off">
+            <option value="0" selected="selected">0</option>
+            <option value=".1">1</option>
+            <option value=".2">2</option>
+            <option value=".3">3</option>
+            <option value=".4">4</option>
+            <option value=".5">5</option>
+            <option value=".6">6</option>
+            <option value=".7">7</option>
+            <option value=".8">8</option>
+            <option value=".9">9</option>
+            <option value=".10">10</option>
+          </select>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th>Perdida de apetito</th>
+      <td>
+        <div id="rating">
+          <select id="perdApetito" name="rating" autocomplete="off">
+            <option value="0" selected="selected">0</option>
+            <option value=".1">1</option>
+            <option value=".2">2</option>
+            <option value=".3">3</option>
+            <option value=".4">4</option>
+            <option value=".5">5</option>
+            <option value=".6">6</option>
+            <option value=".7">7</option>
+            <option value=".8">8</option>
+            <option value=".9">9</option>
+            <option value=".10">10</option>
+          </select>
+        </div>
+      </td>
+      <th>Dolor de cabeza</th>
+      <td>
+        <div id="rating">
+          <select id="dolorCabeza" name="rating" autocomplete="off">
+            <option value="0" selected="selected">0</option>
+            <option value=".1">1</option>
+            <option value=".2">2</option>
+            <option value=".3">3</option>
+            <option value=".4">4</option>
+            <option value=".5">5</option>
+            <option value=".6">6</option>
+            <option value=".7">7</option>
+            <option value=".8">8</option>
+            <option value=".9">9</option>
+            <option value=".10">10</option>
+          </select>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th>Hinchazón</th>
+      <td>
+        <div id="rating">
+          <select id="hinchazon" name="rating" autocomplete="off">
+            <option value="0" selected="selected">0</option>
+            <option value=".1">1</option>
+            <option value=".2">2</option>
+            <option value=".3">3</option>
+            <option value=".4">4</option>
+            <option value=".5">5</option>
+            <option value=".6">6</option>
+            <option value=".7">7</option>
+            <option value=".8">8</option>
+            <option value=".9">9</option>
+            <option value=".10">10</option>
+          </select>
+        </div>
+      </td>
+      <th>Piel seca</th>
+      <td>
+        <div id="rating">
+          <select id="pielSeca" name="rating" autocomplete="off">
+            <option value="0" selected="selected">0</option>
+            <option value=".1">1</option>
+            <option value=".2">2</option>
+            <option value=".3">3</option>
+            <option value=".4">4</option>
+            <option value=".5">5</option>
+            <option value=".6">6</option>
+            <option value=".7">7</option>
+            <option value=".8">8</option>
+            <option value=".9">9</option>
+            <option value=".10">10</option>
+          </select>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th>Manchas Rojas</th>
+      <td>
+        <div id="rating">
+          <select id="manchasRojas" name="rating" autocomplete="off">
+            <option value="0" selected="selected">0</option>
+            <option value=".1">1</option>
+            <option value=".2">2</option>
+            <option value=".3">3</option>
+            <option value=".4">4</option>
+            <option value=".5">5</option>
+            <option value=".6">6</option>
+            <option value=".7">7</option>
+            <option value=".8">8</option>
+            <option value=".9">9</option>
+            <option value=".10">10</option>
+          </select>
+        </div>
+      </td>
+      <th>Fatiga</th>
+      <td>
+        <div id="rating">
+          <select id="fatiga" name="rating" autocomplete="off">
+            <option value="0" selected="selected">0</option>
+            <option value=".1">1</option>
+            <option value=".2">2</option>
+            <option value=".3">3</option>
+            <option value=".4">4</option>
+            <option value=".5">5</option>
+            <option value=".6">6</option>
+            <option value=".7">7</option>
+            <option value=".8">8</option>
+            <option value=".9">9</option>
+            <option value=".10">10</option>
+          </select>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th>Fiebre</th>
+      <td>
+        <div id="rating">
+          <select id="fiebre" name="rating" autocomplete="off">
+            <option value="0" selected="selected">0</option>
+            <option value=".1">1</option>
+            <option value=".2">2</option>
+            <option value=".3">3</option>
+            <option value=".4">4</option>
+            <option value=".5">5</option>
+            <option value=".6">6</option>
+            <option value=".7">7</option>
+            <option value=".8">8</option>
+            <option value=".9">9</option>
+            <option value=".10">10</option>
+          </select>
+        </div>
+      </td>
+      <th>Espinillas</th>
+      <td>
+        <div id="rating">
+          <select id="espinillas" name="rating" autocomplete="off">
+            <option value="0" selected="selected">0</option>
+            <option value=".1">1</option>
+            <option value=".2">2</option>
+            <option value=".3">3</option>
+            <option value=".4">4</option>
+            <option value=".5">5</option>
+            <option value=".6">6</option>
+            <option value=".7">7</option>
+            <option value=".8">8</option>
+            <option value=".9">9</option>
+            <option value=".10">10</option>
+          </select>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th>Costras</th>
+      <td>
+        <div id="rating">
+          <select id="costras" name="rating" autocomplete="off">
+            <option value="0" selected="selected">0</option>
+            <option value=".1">1</option>
+            <option value=".2">2</option>
+            <option value=".3">3</option>
+            <option value=".4">4</option>
+            <option value=".5">5</option>
+            <option value=".6">6</option>
+            <option value=".7">7</option>
+            <option value=".8">8</option>
+            <option value=".9">9</option>
+            <option value=".10">10</option>
+          </select>
+        </div>
+      </td>
+      <th>Dolor articular</th>
+      <td>
+        <div id="rating">
+          <select id="dolorArticular" name="rating" autocomplete="off">
+            <option value="0" selected="selected">0</option>
+            <option value=".1">1</option>
+            <option value=".2">2</option>
+            <option value=".3">3</option>
+            <option value=".4">4</option>
+            <option value=".5">5</option>
+            <option value=".6">6</option>
+            <option value=".7">7</option>
+            <option value=".8">8</option>
+            <option value=".9">9</option>
+            <option value=".10">10</option>
+          </select>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th>Dolor de garganta</th>
+      <td>
+        <div id="rating">
+          <select id="dolorGarganta" name="rating" autocomplete="off">
+            <option value="0" selected="selected">0</option>
+            <option value=".1">1</option>
+            <option value=".2">2</option>
+            <option value=".3">3</option>
+            <option value=".4">4</option>
+            <option value=".5">5</option>
+            <option value=".6">6</option>
+            <option value=".7">7</option>
+            <option value=".8">8</option>
+            <option value=".9">9</option>
+            <option value=".10">10</option>
+          </select>
+        </div>
+      </td>
+      <th>Piel con hoyuelos</th>
+      <td>
+        <div id="rating">
+          <select id="pielHoyuelos" name="rating" autocomplete="off">
+            <option value="0" selected="selected">0</option>
+            <option value=".1">1</option>
+            <option value=".2">2</option>
+            <option value=".3">3</option>
+            <option value=".4">4</option>
+            <option value=".5">5</option>
+            <option value=".6">6</option>
+            <option value=".7">7</option>
+            <option value=".8">8</option>
+            <option value=".9">9</option>
+            <option value=".10">10</option>
+          </select>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th>Dolor de huesos</th>
+      <td>
+        <div id="rating">
+          <select id="dolorHuesos" name="rating" autocomplete="off">
+            <option value="0" selected="selected">0</option>
+            <option value=".1">1</option>
+            <option value=".2">2</option>
+            <option value=".3">3</option>
+            <option value=".4">4</option>
+            <option value=".5">5</option>
+            <option value=".6">6</option>
+            <option value=".7">7</option>
+            <option value=".8">8</option>
+            <option value=".9">9</option>
+            <option value=".10">10</option>
+          </select>
+        </div>
+      </td>
+      <th>Calambres</th>
+      <td>
+        <div id="rating">
+          <select id="calambres" name="rating" autocomplete="off">
+            <option value="0" selected="selected">0</option>
+            <option value=".1">1</option>
+            <option value=".2">2</option>
+            <option value=".3">3</option>
+            <option value=".4">4</option>
+            <option value=".5">5</option>
+            <option value=".6">6</option>
+            <option value=".7">7</option>
+            <option value=".8">8</option>
+            <option value=".9">9</option>
+            <option value=".10">10</option>
+          </select>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th>Congestión nasal</th>
+      <td>
+        <div id="rating">
+          <select id="congNasal" name="rating" autocomplete="off">
+            <option value="0" selected="selected">0</option>
+            <option value=".1">1</option>
+            <option value=".2">2</option>
+            <option value=".3">3</option>
+            <option value=".4">4</option>
+            <option value=".5">5</option>
+            <option value=".6">6</option>
+            <option value=".7">7</option>
+            <option value=".8">8</option>
+            <option value=".9">9</option>
+            <option value=".10">10</option>
+          </select>
+        </div>
+      </td>
+      <th>Erupciones</th>
+      <td>
+        <div id="rating">
+          <select id="erupciones" name="rating" autocomplete="off">
+            <option value="0" selected="selected">0</option>
+            <option value=".1">1</option>
+            <option value=".2">2</option>
+            <option value=".3">3</option>
+            <option value=".4">4</option>
+            <option value=".5">5</option>
+            <option value=".6">6</option>
+            <option value=".7">7</option>
+            <option value=".8">8</option>
+            <option value=".9">9</option>
+            <option value=".10">10</option>
+          </select>
+        </div>
+      </td>
+    </tr>
+  </table>
+</body>
 </html>

@@ -1,8 +1,11 @@
+:root {
+    --color-blue: #4BCAD2;    
+}
 *{
   background-color: #072145;
 }
 h1{
-  color: #4BE9D2;
+  color: var(--color-blue);
   font-family: sans-serif;
   font-weight: lighter;
   text-align: center;
@@ -20,10 +23,18 @@ h2{
   margin-bottom: 4%;
 }
 table{
-  border-spacing: 5em;
+  border-spacing: 15px;
   width: 100%;
   color: white;
   font-family: sans-serif;
   font-weight: lighter;
+  text-align: left;
+}
+th{
+  width: 25%;
+  text-align: right;
+}
+td{
+  width: 25%;
   text-align: left;
 }
