@@ -38,3 +38,12 @@ td{
   width: 25%;
   text-align: left;
 }
+
+button{
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: white;
+  color: red;
+  cursor: pointer;
+}

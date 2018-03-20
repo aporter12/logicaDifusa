@@ -10,6 +10,8 @@
   <script src="js/jquery-1.11.2.min.js"></script>
   <script src="js/jquery.barrating.min.js"></script>
   <script src="js/examples.js"></script>
+  <script src="js/baseDatos.js"></script>
+  <script src="js/funciones.js"></script>
 
 </head>
 <body>
@@ -20,8 +22,8 @@
     <tr>
       <th>Pérdida de cabello</th>
       <td>
-        <div id="rating">
-          <select id="perdCabello" name="rating" autocomplete="off">
+        <div class="rating">
+          <select id="perdCabello" name="1" autocomplete="off" class="sintoma">
             <option value="0" selected="selected">0</option>
             <option value=".1">1</option>
             <option value=".2">2</option>
@@ -32,15 +34,15 @@
             <option value=".7">7</option>
             <option value=".8">8</option>
             <option value=".9">9</option>
-            <option value=".10">10</option>
+            <option value="1">10</option>
           </select>
         </div>
       </td>
 
       <th>Caspa</th>
       <td>
-        <div id="rating">
-          <select id="caspa" name="rating" autocomplete="off">
+        <div class="rating">
+          <select id="caspa" name="2" autocomplete="off" class="sintoma">
             <option value="0" selected="selected">0</option>
             <option value=".1">1</option>
             <option value=".2">2</option>
@@ -51,7 +53,7 @@
             <option value=".7">7</option>
             <option value=".8">8</option>
             <option value=".9">9</option>
-            <option value=".10">10</option>
+            <option value="1">10</option>
           </select>
         </div>
       </td>
@@ -59,8 +61,8 @@
     <tr>
       <th>Picazón</th>
       <td>
-        <div id="rating">
-          <select id="picazon" name="rating" autocomplete="off">
+        <div class="rating">
+          <select id="picazon" name="3" autocomplete="off" class="sintoma">
             <option value="0" selected="selected">0</option>
             <option value=".1">1</option>
             <option value=".2">2</option>
@@ -71,14 +73,14 @@
             <option value=".7">7</option>
             <option value=".8">8</option>
             <option value=".9">9</option>
-            <option value=".10">10</option>
+            <option value="1">10</option>
           </select>
         </div>
       </td>
       <th>Enrojecimiento</th>
       <td>
-        <div id="rating">
-          <select id="enrojecimiento" name="rating" autocomplete="off">
+        <div class="rating">
+          <select id="enrojecimiento" name="4" autocomplete="off" class="sintoma">
             <option value="0" selected="selected">0</option>
             <option value=".1">1</option>
             <option value=".2">2</option>
@@ -89,7 +91,7 @@
             <option value=".7">7</option>
             <option value=".8">8</option>
             <option value=".9">9</option>
-            <option value=".10">10</option>
+            <option value="1">10</option>
           </select>
         </div>
       </td>
@@ -97,8 +99,8 @@
     <tr>
       <th>Ronchas</th>
       <td>
-        <div id="rating">
-          <select id="ronchas" name="rating" autocomplete="off">
+        <div class="rating">
+          <select id="ronchas" name="5" autocomplete="off" class="sintoma">
             <option value="0" selected="selected">0</option>
             <option value=".1">1</option>
             <option value=".2">2</option>
@@ -109,14 +111,14 @@
             <option value=".7">7</option>
             <option value=".8">8</option>
             <option value=".9">9</option>
-            <option value=".10">10</option>
+            <option value="1">10</option>
           </select>
         </div>
       </td>
       <th>Póstulas</th>
       <td>
-        <div id="rating">
-          <select id="postulas" name="rating" autocomplete="off">
+        <div class="rating">
+          <select id="postulas" name="6" autocomplete="off" class="sintoma">
             <option value="0" selected="selected">0</option>
             <option value=".1">1</option>
             <option value=".2">2</option>
@@ -127,7 +129,7 @@
             <option value=".7">7</option>
             <option value=".8">8</option>
             <option value=".9">9</option>
-            <option value=".10">10</option>
+            <option value="1">10</option>
           </select>
         </div>
       </td>
@@ -135,8 +137,8 @@
     <tr>
       <th>Perdida de apetito</th>
       <td>
-        <div id="rating">
-          <select id="perdApetito" name="rating" autocomplete="off">
+        <div class="rating">
+          <select id="perdApetito" name="7" autocomplete="off" class="sintoma">
             <option value="0" selected="selected">0</option>
             <option value=".1">1</option>
             <option value=".2">2</option>
@@ -147,14 +149,14 @@
             <option value=".7">7</option>
             <option value=".8">8</option>
             <option value=".9">9</option>
-            <option value=".10">10</option>
+            <option value="1">10</option>
           </select>
         </div>
       </td>
       <th>Dolor de cabeza</th>
       <td>
-        <div id="rating">
-          <select id="dolorCabeza" name="rating" autocomplete="off">
+        <div class="rating">
+          <select id="dolorCabeza" name="8" autocomplete="off" class="sintoma">
             <option value="0" selected="selected">0</option>
             <option value=".1">1</option>
             <option value=".2">2</option>
@@ -165,7 +167,7 @@
             <option value=".7">7</option>
             <option value=".8">8</option>
             <option value=".9">9</option>
-            <option value=".10">10</option>
+            <option value="1">10</option>
           </select>
         </div>
       </td>
@@ -173,8 +175,8 @@
     <tr>
       <th>Hinchazón</th>
       <td>
-        <div id="rating">
-          <select id="hinchazon" name="rating" autocomplete="off">
+        <div class="rating">
+          <select id="hinchazon" name="9" autocomplete="off" class="sintoma">
             <option value="0" selected="selected">0</option>
             <option value=".1">1</option>
             <option value=".2">2</option>
@@ -185,14 +187,14 @@
             <option value=".7">7</option>
             <option value=".8">8</option>
             <option value=".9">9</option>
-            <option value=".10">10</option>
+            <option value="1">10</option>
           </select>
         </div>
       </td>
       <th>Piel seca</th>
       <td>
-        <div id="rating">
-          <select id="pielSeca" name="rating" autocomplete="off">
+        <div class="rating">
+          <select id="pielSeca" name="10" autocomplete="off" class="sintoma">
             <option value="0" selected="selected">0</option>
             <option value=".1">1</option>
             <option value=".2">2</option>
@@ -203,7 +205,7 @@
             <option value=".7">7</option>
             <option value=".8">8</option>
             <option value=".9">9</option>
-            <option value=".10">10</option>
+            <option value="1">10</option>
           </select>
         </div>
       </td>
@@ -211,8 +213,8 @@
     <tr>
       <th>Manchas Rojas</th>
       <td>
-        <div id="rating">
-          <select id="manchasRojas" name="rating" autocomplete="off">
+        <div class="rating">
+          <select id="manchasRojas" name="11" autocomplete="off" class="sintoma">
             <option value="0" selected="selected">0</option>
             <option value=".1">1</option>
             <option value=".2">2</option>
@@ -223,14 +225,14 @@
             <option value=".7">7</option>
             <option value=".8">8</option>
             <option value=".9">9</option>
-            <option value=".10">10</option>
+            <option value="1">10</option>
           </select>
         </div>
       </td>
       <th>Fatiga</th>
       <td>
-        <div id="rating">
-          <select id="fatiga" name="rating" autocomplete="off">
+        <div class="rating">
+          <select id="fatiga" name="12" autocomplete="off" class="sintoma">
             <option value="0" selected="selected">0</option>
             <option value=".1">1</option>
             <option value=".2">2</option>
@@ -241,7 +243,7 @@
             <option value=".7">7</option>
             <option value=".8">8</option>
             <option value=".9">9</option>
-            <option value=".10">10</option>
+            <option value="1">10</option>
           </select>
         </div>
       </td>
@@ -249,8 +251,8 @@
     <tr>
       <th>Fiebre</th>
       <td>
-        <div id="rating">
-          <select id="fiebre" name="rating" autocomplete="off">
+        <div class="rating">
+          <select id="fiebre" name="13" autocomplete="off" class="sintoma">
             <option value="0" selected="selected">0</option>
             <option value=".1">1</option>
             <option value=".2">2</option>
@@ -261,14 +263,14 @@
             <option value=".7">7</option>
             <option value=".8">8</option>
             <option value=".9">9</option>
-            <option value=".10">10</option>
+            <option value="1">10</option>
           </select>
         </div>
       </td>
       <th>Espinillas</th>
       <td>
-        <div id="rating">
-          <select id="espinillas" name="rating" autocomplete="off">
+        <div class="rating">
+          <select id="espinillas" name="14" autocomplete="off" class="sintoma">
             <option value="0" selected="selected">0</option>
             <option value=".1">1</option>
             <option value=".2">2</option>
@@ -279,7 +281,7 @@
             <option value=".7">7</option>
             <option value=".8">8</option>
             <option value=".9">9</option>
-            <option value=".10">10</option>
+            <option value="1">10</option>
           </select>
         </div>
       </td>
@@ -287,8 +289,8 @@
     <tr>
       <th>Costras</th>
       <td>
-        <div id="rating">
-          <select id="costras" name="rating" autocomplete="off">
+        <div class="rating">
+          <select id="costras" name="15" autocomplete="off" class="sintoma">
             <option value="0" selected="selected">0</option>
             <option value=".1">1</option>
             <option value=".2">2</option>
@@ -299,14 +301,14 @@
             <option value=".7">7</option>
             <option value=".8">8</option>
             <option value=".9">9</option>
-            <option value=".10">10</option>
+            <option value="1">10</option>
           </select>
         </div>
       </td>
       <th>Dolor articular</th>
       <td>
-        <div id="rating">
-          <select id="dolorArticular" name="rating" autocomplete="off">
+        <div class="rating">
+          <select id="dolorArticular" name="16" autocomplete="off" class="sintoma">
             <option value="0" selected="selected">0</option>
             <option value=".1">1</option>
             <option value=".2">2</option>
@@ -317,7 +319,7 @@
             <option value=".7">7</option>
             <option value=".8">8</option>
             <option value=".9">9</option>
-            <option value=".10">10</option>
+            <option value="1">10</option>
           </select>
         </div>
       </td>
@@ -325,8 +327,8 @@
     <tr>
       <th>Dolor de garganta</th>
       <td>
-        <div id="rating">
-          <select id="dolorGarganta" name="rating" autocomplete="off">
+        <div class="rating">
+          <select id="dolorGarganta" name="17" autocomplete="off" class="sintoma">
             <option value="0" selected="selected">0</option>
             <option value=".1">1</option>
             <option value=".2">2</option>
@@ -337,14 +339,14 @@
             <option value=".7">7</option>
             <option value=".8">8</option>
             <option value=".9">9</option>
-            <option value=".10">10</option>
+            <option value="1">10</option>
           </select>
         </div>
       </td>
       <th>Piel con hoyuelos</th>
       <td>
-        <div id="rating">
-          <select id="pielHoyuelos" name="rating" autocomplete="off">
+        <div class="rating">
+          <select id="pielHoyuelos" name="18" autocomplete="off" class="sintoma">
             <option value="0" selected="selected">0</option>
             <option value=".1">1</option>
             <option value=".2">2</option>
@@ -355,7 +357,7 @@
             <option value=".7">7</option>
             <option value=".8">8</option>
             <option value=".9">9</option>
-            <option value=".10">10</option>
+            <option value="1">10</option>
           </select>
         </div>
       </td>
@@ -363,8 +365,8 @@
     <tr>
       <th>Dolor de huesos</th>
       <td>
-        <div id="rating">
-          <select id="dolorHuesos" name="rating" autocomplete="off">
+        <div class="rating">
+          <select id="dolorHuesos" name="19" autocomplete="off" class="sintoma">
             <option value="0" selected="selected">0</option>
             <option value=".1">1</option>
             <option value=".2">2</option>
@@ -375,14 +377,14 @@
             <option value=".7">7</option>
             <option value=".8">8</option>
             <option value=".9">9</option>
-            <option value=".10">10</option>
+            <option value="1">10</option>
           </select>
         </div>
       </td>
       <th>Calambres</th>
       <td>
-        <div id="rating">
-          <select id="calambres" name="rating" autocomplete="off">
+        <div class="rating">
+          <select id="calambres" name="20" autocomplete="off" class="sintoma">
             <option value="0" selected="selected">0</option>
             <option value=".1">1</option>
             <option value=".2">2</option>
@@ -393,7 +395,7 @@
             <option value=".7">7</option>
             <option value=".8">8</option>
             <option value=".9">9</option>
-            <option value=".10">10</option>
+            <option value="1">10</option>
           </select>
         </div>
       </td>
@@ -401,8 +403,8 @@
     <tr>
       <th>Congestión nasal</th>
       <td>
-        <div id="rating">
-          <select id="congNasal" name="rating" autocomplete="off">
+        <div class="rating">
+          <select id="congNasal" name="21" autocomplete="off" class="sintoma">
             <option value="0" selected="selected">0</option>
             <option value=".1">1</option>
             <option value=".2">2</option>
@@ -413,14 +415,14 @@
             <option value=".7">7</option>
             <option value=".8">8</option>
             <option value=".9">9</option>
-            <option value=".10">10</option>
+            <option value="1">10</option>
           </select>
         </div>
       </td>
       <th>Erupciones</th>
       <td>
-        <div id="rating">
-          <select id="erupciones" name="rating" autocomplete="off">
+        <div class="rating">
+          <select id="erupciones" name="22" autocomplete="off" class="sintoma">
             <option value="0" selected="selected">0</option>
             <option value=".1">1</option>
             <option value=".2">2</option>
@@ -431,11 +433,12 @@
             <option value=".7">7</option>
             <option value=".8">8</option>
             <option value=".9">9</option>
-            <option value=".10">10</option>
+            <option value="1">10</option>
           </select>
         </div>
       </td>
     </tr>
   </table>
+  <button onclick="pruebaTres()"> Resultado </button>
 </body>
 </html>
