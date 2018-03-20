@@ -14,25 +14,12 @@ var sintomasUsuario = new Array();
 cargarBaseDatos()
 
 
+
+
 function obtenerDiagnostico(){
-	// $('select').each(function(index) {
- //        alert($('select').attr('id'));
- //    });
-     var sintomasEnfermedades = new Array();
-	$('.sintoma').each(function() {
-		alert($(this).attr('name'))
-	    sintomasEnfermedades.push($(this).val());
-	});
-
-	alert(sintomasEnfermedades[1]);
-
-}
-
-
-
-function pruebaTres(){
 	
 	sintomasUsuario = cargarSintomasUsuario();
+	var mensaje="";
 	var listaPosiblesEnfermedades = [];
 	var listaEnfermedades = lista;
 	var puntajeTotal = 0;
@@ -50,17 +37,22 @@ function pruebaTres(){
  		}
 	}
 	console.log(listaPosiblesEnfermedades);
-	var resultadoEnfermedad = compararEnfermedades(listaPosiblesEnfermedades, "probabilidad")
-	alert("Puedes tener: "+  resultadoEnfermedad.nombre + ". Probabilidad: " + resultadoEnfermedad.probabilidad + "%");
+	if(listaPosiblesEnfermedades.length ==0){
+		mensaje = "No hay ninguna enfermedad que coincida con ese cuadro, estás sano (:"
+	}else {
+		mensaje += "Las posibles enfermedades que podrías tener son: <br>";
+		for (var i in listaPosiblesEnfermedades) {
+			 mensaje += listaPosiblesEnfermedades[i].nombre + ", con grado de coincidencia de: " + listaPosiblesEnfermedades[i].probabilidad + "%" + "<br>";
+	    }
+	}
+	mostrarMensaje(mensaje);
 }
 
-function compararEnfermedades(listaPosiblesEnfermedades, probabilidad){ //Devuelve la enfermedad que tenga más probabilidad
-	 var max;
-    for (var i=0 ; i<listaPosiblesEnfermedades.length ; i++) {
-        if (!max || parseInt(listaPosiblesEnfermedades[i]["probabilidad"]) > parseInt(max["probabilidad"]))
-            max = listaPosiblesEnfermedades[i];
-    }
-    return max;
+function mostrarMensaje(mensaje){
+	$("#respuesta").removeClass("hidden");
+	$("#cuestionario").addClass("hidden");
+	$("#mensaje").html(mensaje);
+
 }
 
 function interseccionEnfermedad(enfermedad){
@@ -125,3 +117,18 @@ function cargarSintomasUsuario(){
 //  	}
 //  	console.log("Suma total: " + totalUrticaria);
 // }
+
+function reiniciarPrueba(){
+	 for (var i=1; i<= Object.keys(lista.Alopecia).length; i++){ // Encuentra los puntajes de todas las enfermedades por nombre
+ 		$("select[name="+i+"]").barrating('clear');
+ 	 }
+ }
+
+
+function regresarCuestionario(){
+	$("#respuesta").addClass("hidden");
+	$("#cuestionario").removeClass("hidden");
+	for (var i=1; i<= Object.keys(lista.Alopecia).length; i++){ //  Reiniciar los puntajes de todas las enfermedades por nombre
+ 		$("select[name="+i+"]").barrating('clear');
+ 	 }
+}

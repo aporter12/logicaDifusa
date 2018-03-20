@@ -3,6 +3,13 @@
 }
 *{
   background-color: #072145;
+  margin:0;
+  padding:0;
+}
+
+html, body{
+  height: 100%;
+  width: 100%;
 }
 h1{
   color: var(--color-blue);
@@ -46,4 +53,32 @@ button{
   background-color: white;
   color: red;
   cursor: pointer;
+}
+
+.hidden{
+  display: none;
+}
+
+#respuesta{
+  height: 500px;
+  width: 800px;
+  margin-right:  auto;
+  margin-left: auto;
+  position: relative; 
+   top: 50%;
+-ms-transform: translateY(-50%);
+-webkit-transform: translateY(-50%);
+-moz-transform: translateY(-50%);
+-o-transform: translateY(-50%);
+transform: translateY(-50%);
+}
+
+
+
+#respuesta button{
+  position: absolute;
+  bottom: 20px;
+  display: block;
+  width: 180px;
+  left: calc(50% - 90px);
 }
