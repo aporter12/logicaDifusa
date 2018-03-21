@@ -11,13 +11,14 @@ var puntajeMastocitosis = sumarPuntajeEnfermedad("Mastocitosis");
 var puntajeEnfisema = sumarPuntajeEnfermedad("Enfisema");
 var puntajeCelulitis = sumarPuntajeEnfermedad("Celulitis");
 var sintomasUsuario = new Array();
+var checkboxEnfermedades = new Array();
 cargarBaseDatos()
 
 
 
 
 function obtenerDiagnostico(){
-	
+	sintomasUsuario =[];
 	sintomasUsuario = cargarSintomasUsuario();
 	var mensaje="";
 	var listaPosiblesEnfermedades = [];
@@ -57,8 +58,6 @@ function mostrarMensaje(mensaje){
 
 function interseccionEnfermedad(enfermedad){
 	var probabilidad =  new Array();
-	sintomasUsuario =[]; // Se vacía la lita de nuevo
-	sintomasUsuario = cargarSintomasUsuario();
 	var enfermedadIndividual = lista[enfermedad];
  		for (var sintomas in enfermedadIndividual){ //Iteración de cada síntoma 
  			if (sintomasUsuario[sintomas - 1] == enfermedadIndividual[sintomas]){
@@ -73,6 +72,7 @@ function interseccionEnfermedad(enfermedad){
  		}
  	var totalEnfermedad=0;
  	for (var i in probabilidad){ // Suma el puntaje de la intersección
+ 		console.log("minimos: "+ probabilidad[i])
  	 	totalEnfermedad+=probabilidad[i];
  	}
  	return totalEnfermedad;
@@ -134,7 +134,45 @@ function regresarCuestionario(){
 }
 
 function getChecked(){
-	$('input[type=checkbox]').each(function() {
-    console.log($(this).attr('name'));
-});
+	$('input[type=checkbox]:checkbox:checked').each(function() {
+	checkboxEnfermedades.push($(this).attr('id'));
+	});
 }
+
+function obtenerDiagnosticoEspecifico(){
+	checkboxEnfermedades = [];
+	getChecked();
+	console.log(checkboxEnfermedades)
+	sintomasUsuario =[]; // Se vacía la lita de nuevo
+	sintomasUsuario = cargarSintomasUsuario();
+	var mensaje="";
+	var listaPosiblesEnfermedades = [];
+	var listaEnfermedades = lista;
+	var puntajeTotal = 0;
+	var puntajeEnfermedad= 0;
+	var estandarizarPuntaje=0;
+	var contador = 0; //Contador para las posibles enfermedades
+	 for (var enfermedad in listaEnfermedades) { //Iteración en cada 
+	 	for (var enfermedadSeleccionada in checkboxEnfermedades){
+	 		if (checkboxEnfermedades[enfermedadSeleccionada]== enfermedad){
+	 			puntajeTotal = interseccionEnfermedad(enfermedad);
+		 		puntajeEnfermedad = sumarPuntajeEnfermedad(enfermedad);
+		 		probabilidad = (puntajeTotal* 100 / puntajeEnfermedad); //regla de 3
+		 		if (probabilidad > 50){
+		 			listaPosiblesEnfermedades[contador] = { "numero": contador, "nombre": enfermedad, "probabilidad": probabilidad }
+		 			contador ++;
+		 		}
+				if(listaPosiblesEnfermedades.length ==0){
+					mensaje = "No hay ninguna enfermedad que coincida con ese cuadro, estás sano (:"
+				}else {
+					mensaje += "Las posibles enfermedades que podrías tener son: <br>";
+					for (var i in listaPosiblesEnfermedades) {
+						 mensaje += listaPosiblesEnfermedades[i].nombre + ", con grado de coincidencia de: " + listaPosiblesEnfermedades[i].probabilidad + "%" + "<br>";
+				    }
+				}
+				mostrarMensaje(mensaje);
+	 		} 
+	 	}	
+	}	
+}
+
