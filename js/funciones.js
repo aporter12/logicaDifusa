@@ -132,3 +132,9 @@ function regresarCuestionario(){
  		$("select[name="+i+"]").barrating('clear');
  	 }
 }
+
+function getChecked(){
+	$('input[type=checkbox]').each(function() {
+    console.log($(this).attr('name'));
+});
+}
