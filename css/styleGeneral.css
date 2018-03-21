@@ -94,6 +94,7 @@ transform: translateY(-50%);
   border-radius: 8px;
   cursor: pointer;
   text-shadow: 2px 2px 2px #363131;
+  padding: 5px;
 }
 .reinicio{
   background: var(--color-blue);
@@ -176,6 +177,8 @@ p{
   text-shadow: 2px 2px 2px #363131;
   margin-bottom: 2%;
   margin-left: 2%;
+  padding: 5px;
+  box-sizing: border-box;
 }
 .regresar:hover{
   background: var(--color-blue);

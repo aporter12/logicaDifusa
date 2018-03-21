@@ -41,6 +41,7 @@ h2{
   margin-top: 3%;
   text-shadow: 2px 2px 2px #363131;
   position: absolute;
+  padding: 5px;
 }
 .login2{
   background: var(--color-blue);
@@ -60,6 +61,7 @@ h2{
   margin-top: 3%;
   text-shadow: 2px 2px 2px #363131;
   position: absolute;
+  padding: 5px;
 }
 .login:hover{
   background: var(--color-blue);

@@ -28,11 +28,11 @@ function obtenerDiagnostico(){ //Diagnóstivo general - Función para obtener lo
  		}
 	}
 	if(listaPosiblesEnfermedades.length ==0){ //Si ninguna pasó el umbral
-		mensaje = "No hay ninguna enfermedad que coincida con ese cuadro, estás sano (:"
+		mensaje = "No hay ninguna enfermedad en la base de datos que coincida con ese cuadro de síntomas"
 	}else {
-		mensaje += "Las posibles enfermedades que podrías tener son: <br>";
+		mensaje += "<p style='text-align:center'>Las posibles enfermedades que podrías tener son:</p> <br>";
 		for (var i in listaPosiblesEnfermedades) {
-			 mensaje += listaPosiblesEnfermedades[i].nombre + ", con grado de coincidencia de: " + listaPosiblesEnfermedades[i].probabilidad + "%" + "<br>";
+			 mensaje += "-" + listaPosiblesEnfermedades[i].nombre + ", con grado de coincidencia de: " + listaPosiblesEnfermedades[i].probabilidad + "%" + "<br>";
 	    }
 	}
 	mostrarMensaje(mensaje);
@@ -134,11 +134,11 @@ function obtenerDiagnosticoEspecifico(){ //Diagnóstivo específico - Función p
 			 	}
 			 }
 				if(listaPosiblesEnfermedades.length ==0){
-					mensaje = "No hay ninguna enfermedad que coincida con ese cuadro, estás sano (:"
+					mensaje = "No hay ninguna enfermedad en la base de datos que coincida con ese cuadro de síntomas"
 				}else {
-					mensaje += "Las posibles enfermedades que podrías tener son: <br>";
+					mensaje += "<p style='text-align:center'>Las posibles enfermedades que podrías tener son:</p> <br>";
 					for (var i in listaPosiblesEnfermedades) {
-						 mensaje += listaPosiblesEnfermedades[i].nombre + ", con grado de coincidencia de: " + listaPosiblesEnfermedades[i].probabilidad + "%" + "<br>";
+						 mensaje += "-" + listaPosiblesEnfermedades[i].nombre + ", con grado de coincidencia de: " + listaPosiblesEnfermedades[i].probabilidad + "%" + "<br>";
 				    }
 				}
 				mostrarMensaje(mensaje);		
