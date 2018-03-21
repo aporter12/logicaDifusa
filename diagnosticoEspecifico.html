@@ -483,13 +483,14 @@
             </td>
           </tr>
         </table>
-        <button onclick="obtenerDiagnosticoEspecifico()"> Resultado </button>
+        <button onclick="obtenerDiagnosticoEspecifico()" class="resultado"> Resultado </button>
+        <a href="index.html"><input type="submit" name="" value="Regresar" class="regresar"></a>
       </div>
       </div>
       <div id="respuesta" class="hidden">
         <h2>Resultado:</h2>
-        <div id="mensaje"></div>
-        <button onclick="regresarCuestionario()" id="reiniciar"> Volver a hacer el cuestionario</button>
+        <div id="mensaje" class="mensaje"></div>
+        <button onclick="regresarCuestionario()" id="reiniciar" class="volver"> Volver a hacer el cuestionario</button>
       </div>
   </body>
 </html>
