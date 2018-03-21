@@ -80,3 +80,77 @@ h2{
   outline: none;
   margin-bottom: 4%;
 }
+.resultado{
+  background: var(--color-blue);
+  opacity: 1.00;
+  font-family: "Verdana";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 100%;
+  color: white;
+  outline: none;
+  border: 4px solid var(--color-blue);
+  border-radius: 8px;
+  cursor: pointer;
+  text-shadow: 2px 2px 2px #363131;
+  margin-bottom: 2%;
+}
+.resultado:hover{
+  background: var(--color-blue);
+  transform: scale(1.2);
+  outline: none;
+  border: 4px solid var(--color-blue);
+}
+.volver{
+  background: var(--color-blue);
+  opacity: 1.00;
+  font-family: "Verdana";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 100%;
+  color: white;
+  outline: none;
+  border: 4px solid var(--color-blue);
+  border-radius: 8px;
+  cursor: pointer;
+  text-shadow: 2px 2px 2px #363131;
+}
+.volver:hover{
+  background: var(--color-blue);
+  transform: scale(1.2);
+  outline: none;
+  border: 4px solid var(--color-blue);
+}
+.regresar{
+  background: var(--color-blue);
+  opacity: 1.00;
+  font-family: "Verdana";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 100%;
+  color: white;
+  outline: none;
+  border: 4px solid var(--color-blue);
+  border-radius: 8px;
+  cursor: pointer;
+  text-shadow: 2px 2px 2px #363131;
+  margin-bottom: 2%;
+  margin-left: 2%;
+}
+.regresar:hover{
+  background: var(--color-blue);
+  transform: scale(1.2);
+  outline: none;
+  border: 4px solid var(--color-blue);
+}
+.mensaje{
+  color: white;
+  margin-left: 5%;
+  font-family: sans-serif;
+  font-weight: lighter;
+  outline: none;
+  font-size: 18px;
+}
