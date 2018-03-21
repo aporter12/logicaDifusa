@@ -1,5 +1,5 @@
-var retrievedObject = localStorage.getItem("baseDatos");
-var lista = JSON.parse(retrievedObject);
+var retrievedObject = localStorage.getItem("baseDatos"); //Se obtiene la información
+var lista = JSON.parse(retrievedObject); //  Se hace un objeto JSON para trabajar con él
 var sintomasUsuario = new Array();
 var checkboxEnfermedades = new Array();
 cargarBaseDatos()
@@ -7,9 +7,9 @@ cargarBaseDatos()
 
 
 
-function obtenerDiagnostico(){
+function obtenerDiagnostico(){ //Diagnóstivo general - Función para obtener los puntajes de todas las enfermedades
 	sintomasUsuario =[];
-	sintomasUsuario = cargarSintomasUsuario();
+	sintomasUsuario = cargarSintomasUsuario(); //Toma los síntomas del usuario
 	var mensaje="";
 	var listaPosiblesEnfermedades = [];
 	var listaEnfermedades = lista;
@@ -21,14 +21,13 @@ function obtenerDiagnostico(){
  		puntajeTotal = interseccionEnfermedad(enfermedad);
  		puntajeEnfermedad = sumarPuntajeEnfermedad(enfermedad);
  		probabilidad = (puntajeTotal* 100 / puntajeEnfermedad); //regla de 3
- 		if (probabilidad > 50){
+ 		if (probabilidad > 50){ // Si pasa el umbral de 50
  			listaPosiblesEnfermedades[contador] = { "numero": contador, "nombre": enfermedad, "probabilidad": probabilidad }
  			//alert("Puedes tener: "+  enfermedad+ ". Probabilidad: " + probabilidad + "%");
  			contador ++;
  		}
 	}
-	console.log(listaPosiblesEnfermedades);
-	if(listaPosiblesEnfermedades.length ==0){
+	if(listaPosiblesEnfermedades.length ==0){ //Si ninguna pasó el umbral
 		mensaje = "No hay ninguna enfermedad que coincida con ese cuadro, estás sano (:"
 	}else {
 		mensaje += "Las posibles enfermedades que podrías tener son: <br>";
@@ -39,14 +38,14 @@ function obtenerDiagnostico(){
 	mostrarMensaje(mensaje);
 }
 
-function mostrarMensaje(mensaje){
+function mostrarMensaje(mensaje){ // Ambos - Muestra el resultado
 	$("#respuesta").removeClass("hidden");
 	$("#cuestionario").addClass("hidden");
 	$("#mensaje").html(mensaje);
 
 }
 
-function interseccionEnfermedad(enfermedad){
+function interseccionEnfermedad(enfermedad){ // Ambos - Saca la intersección de los síntomas del usuario con los síntomas de las enfermedades
 	var probabilidad =  new Array();
 	var enfermedadIndividual = lista[enfermedad];
  		for (var sintomas in enfermedadIndividual){ //Iteración de cada síntoma 
@@ -68,7 +67,7 @@ function interseccionEnfermedad(enfermedad){
 }
 
 
-function sumarPuntajeEnfermedad(enfermedad){ //Suma los puntajes máximos posibles de cada enfermedad
+function sumarPuntajeEnfermedad(enfermedad){ // Ambos -Suma los puntajes máximos posibles de cada enfermedad que se le pase como parámetro
 	var puntaje =0;
 	var listaSintomas = lista[enfermedad];
 	for (var key in listaSintomas) { //Devuelve todos los síntomas
@@ -77,44 +76,22 @@ function sumarPuntajeEnfermedad(enfermedad){ //Suma los puntajes máximos posibl
 	return puntaje;
 }
 
-function cargarSintomasUsuario(){
+function cargarSintomasUsuario(){ // Ambos - Función para sacar los puntajes de las barras
 	 for (var i=1; i<= Object.keys(lista.Alopecia).length; i++){ // Encuentra los puntajes de todas las enfermedades por nombre
  		sintomasUsuario.push(parseFloat($("select[name="+i+"]").val()))
  	 }
  	 return sintomasUsuario;
 }
 
-// function pruebaEnfermedad(){
-// 	var probabilidadUrticaria =  new Array();
-// 	sintomasUsuario =[]; // Se vacía la lita de nuevo
-// 	sintomasUsuario = cargarSintomasUsuario();
-// 	var enfermedad = lista.Urticaria;
-//  		for (var sintomas in enfermedad){ //Iteración de cada síntoma 
-//  			if (sintomasUsuario[sintomas - 1] == enfermedad[sintomas]){
-//  				probabilidadUrticaria.push(enfermedad[sintomas]);
-//  			}
-//  			else if (sintomasUsuario[sintomas-1] < enfermedad[sintomas]){
-//  				probabilidadUrticaria.push(sintomasUsuario[sintomas-1]);
-//  			}
-//  			else if(sintomasUsuario[sintomas-1] > enfermedad[sintomas]){
-//  				probabilidadUrticaria.push(enfermedad[sintomas]);
-//  			}
-//  		}
-//  	var totalUrticaria=0;
-//  	for (var i in probabilidadUrticaria){
-//  	 	totalUrticaria+=probabilidadUrticaria[i];
-//  	}
-//  	console.log("Suma total: " + totalUrticaria);
-// }
 
-function reiniciarPrueba(){
+function reiniciarPrueba(){ // Ambos - Función para reiniciar los puntajes 
 	 for (var i=1; i<= Object.keys(lista.Alopecia).length; i++){ // Encuentra los puntajes de todas las enfermedades por nombre
  		$("select[name="+i+"]").barrating('clear');
  	 }
  }
 
 
-function regresarCuestionario(){
+function regresarCuestionario(){ // Ambos - Función para volver a mostrar el cuestionario
 	$("#respuesta").addClass("hidden");
 	$("#cuestionario").removeClass("hidden");
 	for (var i=1; i<= Object.keys(lista.Alopecia).length; i++){ //  Reiniciar los puntajes de todas las enfermedades por nombre
@@ -122,7 +99,7 @@ function regresarCuestionario(){
  	 }
 }
 
-function getChecked(){
+function getChecked(){ //Diagnóstivo específico - Función para obtener todas las enfermedades que  tienen check, si no hay ninguna, la bandera se queda como false
 	var bandera = false;
 	var contadorCheck= 0; //Contador para saber cuántas enfermedades el usuario dio check
 	$('input[type=checkbox]:checkbox:checked').each(function() {
@@ -135,10 +112,10 @@ function getChecked(){
 	return bandera;
 }
 
-function obtenerDiagnosticoEspecifico(){
+function obtenerDiagnosticoEspecifico(){ //Diagnóstivo específico - Función para hacer todos los cálculos del diagnóstico específico
 	checkboxEnfermedades = [];
-	if (getChecked()==true){
-		sintomasUsuario =[]; // Se vacía la lita de nuevo
+	if (getChecked()==true){ //Si hay 2 enfermedades o más, se procede con la función 
+		sintomasUsuario =[]; // Se vacía la lista de nuevo
 		sintomasUsuario = cargarSintomasUsuario();
 		var mensaje="";
 		var listaPosiblesEnfermedades = [];
